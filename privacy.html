@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>YARIKIRU Privacy Policy</title>
+  <meta name="description" content="YARIKIRUのプライバシーポリシー。取得する情報・利用目的・第三者提供・お問い合わせについて説明します。" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="YARIKIRU Privacy Policy" />
+  <meta property="og:description" content="YARIKIRUアプリにおける個人情報の取り扱いについて。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <!-- Favicon（サポートページと同一） -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23007AFF'/><stop offset='100%25' stop-color='%2334AADC'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/><text y='.9em' font-size='70' x='12'>🎯</text></svg>" />
+
+  <style>
+    /* =====================================================
+       Custom Properties（サポートページと統一）
+    ===================================================== */
+    :root {
+      /* Colors – light mode */
+      --bg:              #ffffff;
+      --bg-secondary:    #f5f5f7;
+      --bg-card:         #ffffff;
+      --text-primary:    #1d1d1f;
+      --text-secondary:  #6e6e73;
+      --text-tertiary:   #98989d;
+      --border:          rgba(0, 0, 0, 0.1);
+      --shadow-card:     0 2px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-btn:      0 6px 24px rgba(0, 122, 255, 0.35);
+      --shadow-btn-hover:0 10px 32px rgba(0, 122, 255, 0.48);
+      --nav-bg:          rgba(255, 255, 255, 0.82);
+
+      /* Brand gradient（サポートページと同一） */
+      --accent-start:    #007AFF;
+      --accent-end:      #34AADC;
+      --accent-gradient: linear-gradient(135deg, var(--accent-start) 0%, var(--accent-end) 100%);
+
+      /* Typography */
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+              "Helvetica Neue", Arial, sans-serif;
+      --size-hero:    clamp(2.625rem, 7vw, 4.25rem);
+      --size-sub:     clamp(1.0625rem, 2.5vw, 1.25rem);
+      --size-section: clamp(1.875rem, 4vw, 2.625rem);
+
+      /* Layout */
+      --section-py: clamp(4.5rem, 10vw, 7.5rem);
+      --content-px: clamp(1.25rem, 5vw, 2rem);
+      --max-width:  760px;
+      --radius:     18px;
+      --radius-sm:  12px;
+      --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode overrides */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:             #000000;
+        --bg-secondary:   #111111;
+        --bg-card:        #1c1c1e;
+        --text-primary:   #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --text-tertiary:  #6e6e73;
+        --border:         rgba(255, 255, 255, 0.1);
+        --shadow-card:    0 2px 16px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+        --nav-bg:         rgba(0, 0, 0, 0.82);
+      }
+    }
+
+    /* =====================================================
+       Reset & Base
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* =====================================================
+       Layout Utility
+    ===================================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--content-px);
+    }
+
+    /* =====================================================
+       Navigation – サポートページと同一のフロストガラス
+    ===================================================== */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      height: 50px;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background-color: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 var(--content-px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* グラデーションロゴ */
+    .nav-logo {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    /* サポートページへのリンク */
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent-start);
+      text-decoration: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: 980px;
+      transition: background-color var(--transition);
+    }
+    .nav-link:hover { background-color: rgba(0, 122, 255, 0.1); }
+
+    /* =====================================================
+       Hero Section
+    ===================================================== */
+    .hero {
+      padding-top: calc(50px + var(--section-py));
+      padding-bottom: var(--section-py);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ヒーロー背景グロー */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 80% 55% at 50% 0%,
+        rgba(0, 122, 255, 0.07) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero::before {
+        background: radial-gradient(
+          ellipse 80% 55% at 50% 0%,
+          rgba(0, 122, 255, 0.12) 0%,
+          transparent 70%
+        );
+      }
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.125rem;
+    }
+
+    .hero-title {
+      font-size: var(--size-hero);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1.06;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    /* "Privacy Policy" の後半をグラデーションに */
+    .hero-title .word-accent {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-meta {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.01em;
+    }
+
+    /* =====================================================
+       Divider
+    ===================================================== */
+    .divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* =====================================================
+       Policy Body Section
+    ===================================================== */
+    .policy-section {
+      padding: var(--section-py) 0;
+    }
+
+    /* 各条項を囲むカード */
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* 個別の条項 */
+    .policy-item {
+      padding: 1.625rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-item:last-child { border-bottom: none; }
+
+    /* 条項タイトル（例: 1. 取得する情報） */
+    .policy-item-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    /* 条番号バッジ */
+    .policy-item-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--accent-gradient);
+      color: #ffffff;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      flex-shrink: 0;
+    }
+
+    /* 条項の本文 */
+    .policy-item-body {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 箇条書き */
+    .policy-list {
+      list-style: none;
+      margin-top: 0.625rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .policy-list li {
+      padding-left: 1.125rem;
+      position: relative;
+    }
+
+    /* カスタム箇条書き記号（グラデーション丸） */
+    .policy-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+    }
+
+    /* お問い合わせメールリンク */
+    .policy-email {
+      color: var(--accent-start);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+    .policy-email:hover { opacity: 0.7; }
+
+    /* =====================================================
+       Support Page Link Section
+    ===================================================== */
+    .support-section {
+      background: var(--bg-secondary);
+      padding: var(--section-py) 0;
+    }
+
+    .support-card {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .support-desc {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+
+    /* サポートページへのピルボタン */
+    .support-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      padding: 0.875rem 2.125rem;
+      border-radius: 980px;
+      transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+      box-shadow: var(--shadow-btn);
+    }
+
+    .support-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+      opacity: 0.93;
+    }
+
+    .support-btn:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-btn);
+    }
+
+    /* =====================================================
+       Section Header（共通）
+    ===================================================== */
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: var(--size-section);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      color: var(--text-primary);
+    }
+
+    /* =====================================================
+       Footer
+    ===================================================== */
+    .footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.01em;
+    }
+
+    /* =====================================================
+       Focus / Accessibility
+    ===================================================== */
+    :focus-visible {
+      outline: 2.5px solid var(--accent-start);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* =====================================================
+       Reduced Motion
+    ===================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration:  0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       Navigation
+  ===================================================== -->
+  <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+    <div class="nav-inner">
+      <!-- ロゴはサポートページへのリンクも兼ねる -->
+      <a
+        class="nav-logo"
+        href="https://atsuta1120.github.io/yarikiru-support/"
+        aria-label="YARIKIRU サポートページへ"
+      >YARIKIRU</a>
+      <a
+        class="nav-link"
+        href="https://atsuta1120.github.io/yarikiru-support/"
+      >サポート</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- =====================================================
+         Hero Section
+    ===================================================== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero-eyebrow" aria-hidden="true">Legal</p>
+
+        <h1 class="hero-title" id="hero-heading">
+          Privacy<br>
+          <span class="word-accent">Policy</span>
+        </h1>
+
+        <!-- 最終更新日 -->
+        <p class="hero-meta">Last Updated: July 2026</p>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         Privacy Policy Body
+    ===================================================== -->
+    <section class="policy-section" aria-labelledby="policy-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label" aria-hidden="true">Privacy Policy</p>
+          <h2 class="section-title" id="policy-heading">プライバシーポリシー</h2>
+        </div>
+
+        <!-- はじめに -->
+        <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem; text-align:center;">
+          YARIKIRU（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、<br>個人情報の適切な保護に努めます。
+        </p>
+
+        <!-- 各条項カード -->
+        <div class="policy-card" role="list">
+
+          <!-- 1. 取得する情報 -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">1</span>
+              取得する情報
+            </h3>
+            <div class="policy-item-body">
+              <p>本アプリは、サービス提供のために以下の情報を取得する場合があります。</p>
+              <ul class="policy-list" aria-label="取得する情報の一覧">
+                <li>Cookie</li>
+                <li>端末識別情報（UUID）</li>
+                <li>お問い合わせ時にユーザーが提供する情報</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. 利用目的 -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">2</span>
+              利用目的
+            </h3>
+            <div class="policy-item-body">
+              <p>取得した情報は以下の目的で利用します。</p>
+              <ul class="policy-list" aria-label="利用目的の一覧">
+                <li>ユーザーごとの目標や進捗の管理</li>
+                <li>サービスの改善</li>
+                <li>不具合の調査および対応</li>
+                <li>お問い合わせへの対応</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. 第三者提供 -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">3</span>
+              第三者提供
+            </h3>
+            <div class="policy-item-body">
+              本アプリは、法令に基づく場合を除き、取得した情報を第三者へ提供しません。
+            </div>
+          </article>
+
+          <!-- 4. セキュリティ -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">4</span>
+              セキュリティ
+            </h3>
+            <div class="policy-item-body">
+              本アプリは、取得した情報の漏えい、紛失、改ざん等を防ぐため、適切な管理に努めます。
+            </div>
+          </article>
+
+          <!-- 5. 外部サービスの利用 -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">5</span>
+              外部サービスの利用
+            </h3>
+            <div class="policy-item-body">
+              本アプリでは、サービス改善や利用状況の分析のため、将来的に外部サービスを利用する場合があります。外部サービスを利用する場合は、本プライバシーポリシーを更新します。
+            </div>
+          </article>
+
+          <!-- 6. プライバシーポリシーの変更 -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">6</span>
+              プライバシーポリシーの変更
+            </h3>
+            <div class="policy-item-body">
+              本ポリシーは、必要に応じて変更される場合があります。変更後の内容は、本ページに掲載した時点で有効となります。
+            </div>
+          </article>
+
+          <!-- 7. お問い合わせ -->
+          <article class="policy-item" role="listitem">
+            <h3 class="policy-item-title">
+              <span class="policy-item-num" aria-hidden="true">7</span>
+              お問い合わせ
+            </h3>
+            <div class="policy-item-body">
+              本ポリシーに関するお問い合わせは、以下までご連絡ください。<br>
+              <!-- ★ メールアドレスを変更する場合はここを編集してください ★ -->
+              <a class="policy-email" href="mailto:yarikiru.support@gmail.com">
+                yarikiru.support@gmail.com
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.policy-card -->
+
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         Support Page Link
+    ===================================================== -->
+    <section class="support-section" aria-labelledby="support-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label" aria-hidden="true">Support</p>
+          <h2 class="section-title" id="support-heading">お困りですか？</h2>
+        </div>
+
+        <div class="support-card">
+          <p class="support-desc">
+            よくある質問や不具合報告は<br>サポートページをご覧ください。
+          </p>
+
+          <a
+            class="support-btn"
+            href="https://atsuta1120.github.io/yarikiru-support/"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <path d="M12 17h.01"/>
+            </svg>
+            サポートページへ
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       Footer
+  ===================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">© 2026 YARIKIRU</p>
+    </div>
+  </footer>
+
+</body>
+</html>
